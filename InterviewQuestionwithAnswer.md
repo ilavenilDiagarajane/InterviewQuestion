@@ -79,13 +79,17 @@ Promise.race(promises).then((value) => console.log(value),(value)=>console.log(v
 //// expected output: 100
 ```
 #### List all lifecycle methods and their equivalent hook 
-- componentDidMount-useEffect(() => {
-}, []);
-- componentDidUpdate-useEffect(() => {
-}, [dependency]);
-- componentWillUnmount -useEffect(() => {
-  return () => {
-    }
+// componentWillmount
+useEffect(() => {}, []);
+
+// componentDidMount
+// componentWillUpdate
+// componentDidUpdate
+useEffect(() => {}) || useEffect(() => {}, [dependencyArray]);
+
+//componentWillUnmount
+useEffect(() => {
+  return () => {};
 }, []);
 
 #### What is higher order function? Explain with an example 
@@ -177,13 +181,18 @@ const person = Object.freeze({name: "anu"});
  //anu
 ```
 #### What strict mode in javascript?
-if we use strict mode in javascript . if we call the variable without declaring it wil through error in strict mode.
+strict mode is introduced as ES6 feature, where the code syntax and the variables cannot be used without declaration.
 
 ```js
 'use strict';
 str = "Hello World"; 
 console.log(str);
  // => Throw a reference error
+
+//without strict mode
+ str = "Hello World"; 
+console.log(str);
+// hello world
 ```
 #### What will be the output of the following JavaScript code? Why?
 
